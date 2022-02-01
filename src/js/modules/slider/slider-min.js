@@ -74,7 +74,7 @@ export default class MiniSlider extends Slider {
 				}, 2000)
 			}
 		} catch (e) {
-			console.log('Ошибка: ' + e)
+			console.log('Ошибка - ' + e)
 		}
 	}
 }

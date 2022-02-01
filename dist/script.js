@@ -5714,7 +5714,7 @@ function (_Slider) {
           }, 2000);
         }
       } catch (e) {
-        console.log('Ошибка: ' + e);
+        console.log('Ошибка - ' + e);
       }
     }
   }]);
