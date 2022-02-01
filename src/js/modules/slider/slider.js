@@ -9,7 +9,11 @@ export default class Slider {
 						autoplay
 					} = {}) {
 		this.wrapper = document.querySelector(wrapperForSliderSelector)
-		this.slides = this.wrapper.children
+		try {
+			this.slides = this.wrapper.children
+		} catch (e) {
+			console.log('Ошибка: ' + e)
+		}
 		this.btns = document.querySelectorAll(btnsSelector)
 		this.prev = document.querySelector(prevBtnSelector)
 		this.next = document.querySelector(nextBtnSelector)

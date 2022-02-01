@@ -30,7 +30,7 @@ export default class MiniSlider extends Slider {
 			this.wrapper.appendChild(this.slides[1])
 			this.wrapper.appendChild(this.slides[2])
 			this.decorizeSlides()
-		} else if(this.slides[1].tagName == 'BUTTON') {
+		} else if (this.slides[1].tagName == 'BUTTON') {
 			this.wrapper.appendChild(this.slides[0])
 			this.wrapper.appendChild(this.slides[1])
 			this.decorizeSlides()
@@ -57,20 +57,24 @@ export default class MiniSlider extends Slider {
 	}
 
 	init() {
-		this.wrapper.style.cssText = `
+		try {
+			this.wrapper.style.cssText = `
 			display: flex;
 			flex-wrap: wrap;
 			overflow: hidden;
 			align-items: flex-start;
 		`
 
-		this.bindTriggers()
-		this.decorizeSlides()
+			this.bindTriggers()
+			this.decorizeSlides()
 
-		if (this.autoplay) {
-			setInterval(() => {
-				this.nextSlide()
-			}, 2000)
+			if (this.autoplay) {
+				setInterval(() => {
+					this.nextSlide()
+				}, 2000)
+			}
+		} catch (e) {
+			console.log('Ошибка: ' + e)
 		}
 	}
 }
