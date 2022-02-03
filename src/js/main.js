@@ -4,6 +4,7 @@ import MiniSlider from "./modules/slider/slider-min"
 import Difference from "./modules/difference";
 import Form from "./modules/forms";
 import ShowInfo from "./modules/showInfo";
+import Download from "./modules/dowload";
 
 window.addEventListener('DOMContentLoaded', () => {
 	const slider = new MainSlider({btnsSelector: '.next', wrapperForSliderSelector: '.page'})
@@ -46,4 +47,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	new Form('.form').init()
 
 	new ShowInfo('.plus').init()
+
+	new Download('.download').init()
 })
